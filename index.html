@@ -1,0 +1,38 @@
+<html> 
+<body>
+    <div style="color:red; font-size:2 em;"> EVENTS </div>
+   <!--<ul id="eventlist"> </ul>-->
+   <div id="eventlist" style="color:red;font-size:0.8em;"> Simple SSE Event listener that writes to a list. </div>
+   <script> 
+
+    var eventList = document.getElementById("eventlist");
+    var evtSource = new EventSource("http://localhost:4000/msg");
+
+    //var newElement = document.createElement("li");
+    var newElement = document.createElement("div");
+   
+    newElement.setAttribute('class','incomingdata');
+    //newElement.innerHTML = "Messages:";
+
+    eventList.appendChild(newElement);
+
+    evtSource.onmessage = function(e) {
+        console.log("received event");
+        console.log(e);
+       // var newElement = document.createElement("li");
+        var newElement = document.createElement("div");
+
+        newElement.innerHTML = "message: " + e.data;
+        eventList.appendChild(newElement);
+    };      
+
+    evtSource.onerror = function(e) {
+        console.log("EventSource failed.");
+    };
+
+    console.log(evtSource);
+
+    </script>
+
+</body>
+</html>

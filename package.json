@@ -1,0 +1,19 @@
+{
+  "name": "streamapi",
+  "version": "1.0.0",
+  "description": "streaming api listener for apical",
+  "main": "apical.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fox s peterson",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "errorhandler": "^1.4.3",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "method-override": "^2.3.5",
+    "multer": "^1.1.0"
+  }
+}
